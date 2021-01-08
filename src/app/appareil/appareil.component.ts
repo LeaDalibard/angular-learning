@@ -9,8 +9,7 @@ export class AppareilComponent implements OnInit {
 
   //appareilName: string = 'Washing Machine';
   @Input() appareilName: string;
-
-  appareilStatus: string = 'off';
+  @Input() appareilStatus: string ;
 
 
   constructor() { }

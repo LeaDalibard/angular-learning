@@ -3,10 +3,12 @@
     <div class="col-xs-12">
       <h2>Appareils</h2>
       <ul class="list-group">
-        <app-appareil appareilName="Washing Machine"></app-appareil>
-        <app-appareil appareilName="Fridge"></app-appareil>
-        <app-appareil appareilName="Computer"></app-appareil>
+        <app-appareil [appareilName]="appareilOne" [appareilStatus]="'off'" ></app-appareil>
+        <app-appareil [appareilName]="appareilTwo" [appareilStatus]="'on'"></app-appareil>
+        <app-appareil [appareilName]="appareilThree" [appareilStatus]="'off'"></app-appareil>
       </ul>
+      <!-- Don't forget to put square brackets to link content of variable to component property-->
+      <!-- Need to put doubles quotes to appareil status to passed string directly if not it's a variable-->
       <button class="btn btn-success"
               [disabled]="!isAuth"
               (click)="onClickTurnOn()">Turn everything on
