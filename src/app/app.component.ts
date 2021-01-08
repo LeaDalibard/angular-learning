@@ -36,5 +36,8 @@ export class AppComponent {
   onClickTurnOn(){
     console.log('Turn everything on');
   }
+
+
+
 }
 // Bouton s'active après 4 sec, simulation d'authentification
