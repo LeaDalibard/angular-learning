@@ -7,7 +7,10 @@
         <app-appareil></app-appareil>
         <app-appareil></app-appareil>
       </ul>
-      <button class="btn btn-success" [disabled]="!isAuth" >Turn everything on</button>
+      <button class="btn btn-success"
+              [disabled]="!isAuth"
+              (click)="onClickTurnOn()">Turn everything on
+      </button>
       <!-- [] to link disable property to type script, disabled when isAuth === false-->
     </div>
   </div>
