@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-xs-12">
       <h2>Appareils</h2>
-      <p>Update :{{lastUpdate | date :'short' | uppercase}}</p>
+      <p>Update :{{lastUpdate| async  | date :'short' | uppercase}}</p>
+      <!-- Need to precised async to specify waiting for promise before display-->
       <ul class="list-group">
         <app-appareil *ngFor="let appareil of appareils" [appareilName]="appareil.name"
                       [appareilStatus]="appareil.status"></app-appareil>
