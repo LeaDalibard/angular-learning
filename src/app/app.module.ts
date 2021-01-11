@@ -14,6 +14,7 @@ import {Routes} from '@angular/router';
 import {RouterModule} from '@angular/router';
 import {SingleAppareilComponent} from './single-appareil/single-appareil.component';
 import {FourOhFourComponent} from './four-oh-four/four-oh-four.component';
+import { EditAppareilComponent } from './edit-appareil/edit-appareil.component';
 
 const appRoutes: Routes = [
   {path: 'appareils', canActivate: [AuthGuard], component: AppareilViewComponent},
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     AuthComponent,
     AppareilViewComponent,
     SingleAppareilComponent,
-    FourOhFourComponent
+    FourOhFourComponent,
+    EditAppareilComponent
   ],
   imports: [
     BrowserModule,
