@@ -5,7 +5,8 @@
   <app-appareil *ngFor="let appareil of appareils ;let i=index"
                 [appareilName]="appareil.name"
                 [appareilStatus]="appareil.status"
-                [index]="i"></app-appareil>
+                [index]="i"
+                [id]="appareil.id"></app-appareil>
 </ul>
 <!-- Don't forget to put square brackets to link content of variable to component property-->
 <!-- Need to put doubles quotes to appareil status to passed string directly if not it's a variable-->

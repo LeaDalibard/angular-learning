@@ -9,14 +9,17 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class SingleAppareilComponent implements OnInit {
 
-  constructor(private appareilService: AppareilService, private route:ActivatedRoute) {
+  constructor(private appareilService: AppareilService, private route: ActivatedRoute) {
   }
 
   name: string = 'Appareil';
   status: string = 'Status';
 
   ngOnInit(): void {
-    this.name=this.route.snapshot.params['id'];
+    const id = this.route.snapshot.params['id'];
+    this.name = this.appareilService.getAppareilById(+id).name;
+    this.status = this.status = this.appareilService.getAppareilById(+id).status;
+    //+ to convert string to number
   }
 
 }

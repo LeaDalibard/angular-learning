@@ -37,7 +37,7 @@ export class AppareilService {
     this.appareils[i].status = 'off';
   }
 
-  getAppareilbyId(id:number){
+  getAppareilById(id:number){
     const appareil=this.appareils.find(
       (s)=>{
         return s.id===id;
