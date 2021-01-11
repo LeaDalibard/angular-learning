@@ -34,7 +34,15 @@ export class AppComponent implements OnInit {
   }
 
   onClickTurnOn() {
-    console.log('Turn everything on');
+    this.appareilService.switchOnAll();
+  }
+
+  onClickTurnOff() {
+    if (confirm('Are you sure you want to turn all devices off ?')) {
+      this.appareilService.switchOffAll();
+    } else {
+      return null;
+    }
   }
 
 
