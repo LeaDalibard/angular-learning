@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AppareilService} from './services/appareil.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,34 +8,20 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   isAuth = false;
-  lastUpdate = new Promise((resolve,reject)=>{
+  appareils: any[];
+
+  lastUpdate = new Promise((resolve, reject) => {
     const date = new Date();
     setTimeout(
-      ()=>{
+      () => {
         resolve(date);
-      },2000
+      }, 2000
     );
-    });
+  });
 
-  appareils = [
-    {
-      name: 'Washing Machine',
-      status: 'off'
-    },
-    {
-      name: 'Fridge',
-      status: 'on'
-    },
-    {
-      name: 'Computer',
-      status: 'off'
-    }
-  ];
-
-
-  constructor() {
+  constructor(private appareilService: AppareilService) {
     setTimeout(
       () => {
         this.isAuth = true;
@@ -41,11 +29,15 @@ export class AppComponent {
     );
   }
 
-  onClickTurnOn(){
+  ngOnInit() {
+    this.appareils = this.appareilService.appareils;
+  }
+
+  onClickTurnOn() {
     console.log('Turn everything on');
   }
 
 
-
 }
+
 // Bouton s'active après 4 sec, simulation d'authentification
