@@ -11,11 +11,11 @@
 <!-- Don't forget to put square brackets to link content of variable to component property-->
 <!-- Need to put doubles quotes to appareil status to passed string directly if not it's a variable-->
 <button class="btn btn-success"
-        [disabled]="!isAuth"
+<!--[disabled]="!isAuth"-->
         (click)="onClickTurnOn()">Turn everything on
 </button>
 <button class="btn btn-danger"
-        [disabled]="!isAuth"
-        (click)="onClickTurnOff()">Turn everything off
+<!--[disabled]="!isAuth"-->
+(click)="onClickTurnOff()">Turn everything off
 </button>
 <!-- [] to link disable property to type script, disabled when isAuth === false-->
