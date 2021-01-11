@@ -6,6 +6,7 @@ import { MyFirstComponentComponent } from './my-first-component/my-first-compone
 import { AppareilComponent } from './appareil/appareil.component';
 import { FormsModule } from '@angular/forms';
 import {AppareilService} from './services/appareil.service';
+import {AuthService} from './services/auth.service';
 import { AuthComponent } from './auth/auth.component';
 import { AppareilViewComponent } from './appareil-view/appareil-view.component';
 import { Routes } from '@angular/router';
@@ -30,7 +31,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AppareilService],
+  providers: [AppareilService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
