@@ -9,15 +9,8 @@ import {AppareilService} from './services/appareil.service';
 })
 
 export class AppComponent implements OnInit {
-  isAuth = false;
-
 
   constructor(private appareilService: AppareilService) {
-    setTimeout(
-      () => {
-        this.isAuth = true;
-      }, 4000
-    );
   }
 
   ngOnInit() {
