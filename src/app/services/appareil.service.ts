@@ -25,4 +25,12 @@ export class AppareilService {
       appareil.status = 'off';
     }
   }
+
+  switchOneOn(i: number) {
+    this.appareils[i].status = 'on';
+  }
+
+  switchOneOff(i: number) {
+    this.appareils[i].status = 'off';
+  }
 }
