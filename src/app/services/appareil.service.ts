@@ -9,23 +9,24 @@ export class AppareilService {
 
   //subject gérera des arrays de type any
 
-  private appareils = [
-    {
-      id: 1,
-      name: 'Washing Machine',
-      status: 'off'
-    },
-    {
-      id: 2,
-      name: 'Fridge',
-      status: 'on'
-    },
-    {
-      id: 3,
-      name: 'Computer',
-      status: 'off'
-    }
-  ];
+  //private appareils = [
+  //     {
+  //       id: 1,
+  //       name: 'Washing Machine',
+  //       status: 'off'
+  //     },
+  //     {
+  //       id: 2,
+  //       name: 'Fridge',
+  //       status: 'on'
+  //     },
+  //     {
+  //       id: 3,
+  //       name: 'Computer',
+  //       status: 'off'
+  //     }
+  //   ];
+  private appareils = [];
 
   constructor(private httpClient: HttpClient) {
   }
@@ -92,7 +93,7 @@ export class AppareilService {
       );
   }
 
-  getAppareilsFromServer(){
+  getAppareilsFromServer() {
     this.httpClient
       .get<any[]>('https://angular-learning-1db96-default-rtdb.europe-west1.firebasedatabase.app/appareils.json')
       .subscribe(
@@ -105,6 +106,7 @@ export class AppareilService {
         }
       );
   }
+
   // get<any[]> précise qu'on va recevoir un array de type any
 
 }

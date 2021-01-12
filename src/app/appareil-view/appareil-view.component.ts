@@ -1,6 +1,6 @@
-import {Component,OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AppareilService} from '../services/appareil.service';
-import { Subscription } from 'rxjs';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-appareil-view',
@@ -51,7 +51,13 @@ export class AppareilViewComponent implements OnInit, OnDestroy {
     this.appareilSubscription.unsubscribe();
   }
 
-  onSave(){
+  onSave() {
     this.appareilService.saveAppareilsToServer();
   }
+
+  onFetch() {
+    this.appareilService.getAppareilsFromServer();
+  }
+
+
 }
