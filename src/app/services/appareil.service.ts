@@ -81,7 +81,7 @@ export class AppareilService {
 
   saveAppareilsToServer() {
     this.httpClient
-      .post('https://angular-learning-1db96-default-rtdb.europe-west1.firebasedatabase.app/appareils.json', this.appareils)
+      .put('https://angular-learning-1db96-default-rtdb.europe-west1.firebasedatabase.app/appareils.json', this.appareils)
       .subscribe(
         () => {
           console.log('Saving done');
