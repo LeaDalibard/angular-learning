@@ -1,6 +1,6 @@
 import {Component,OnDestroy, OnInit} from '@angular/core';
 import {AppareilService} from '../services/appareil.service';
-import { Subscription } from 'rxjs-compat/Subscription';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-appareil-view',
@@ -11,6 +11,8 @@ export class AppareilViewComponent implements OnInit, OnDestroy {
 
   appareils: any[];
   isAuth = false;
+  appareilSubscription: Subscription;
+
 
   lastUpdate = new Promise((resolve, reject) => {
     const date = new Date();
