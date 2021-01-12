@@ -1,5 +1,8 @@
 import {Subject} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 
+@Injectable()
 export class AppareilService {
 
   appareilsSubject = new Subject<any[]>();
@@ -23,6 +26,9 @@ export class AppareilService {
       status: 'off'
     }
   ];
+
+  constructor(private httpClient: HttpClient) {
+  }
 
   emitAppareilSubject() {
     this.appareilsSubject.next(this.appareils.slice());
@@ -58,11 +64,11 @@ export class AppareilService {
     return appareil;
   }
 
-  addAppareil(name:string, status:string){
-    const appareilObject={
-      id:0,
-      name:'',
-      status:''
+  addAppareil(name: string, status: string) {
+    const appareilObject = {
+      id: 0,
+      name: '',
+      status: ''
     };
     appareilObject.name = name;
     appareilObject.status = status;
@@ -72,4 +78,18 @@ export class AppareilService {
   }
 
   //subject declared to keep everything updated
+
+  saveAppareilsToServer() {
+    this.httpClient
+      .post('https://angular-learning-1db96-default-rtdb.europe-west1.firebasedatabase.app/appareils.json', this.appareils)
+      .subscribe(
+        () => {
+          console.log('Saving done');
+        },
+        (error) => {
+          console.log('Error : ' + error);
+        }
+      );
+  }
+
 }
