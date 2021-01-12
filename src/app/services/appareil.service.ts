@@ -92,4 +92,19 @@ export class AppareilService {
       );
   }
 
+  getAppareilsFromServer(){
+    this.httpClient
+      .get<any[]>('https://angular-learning-1db96-default-rtdb.europe-west1.firebasedatabase.app/appareils.json')
+      .subscribe(
+        (response) => {
+          this.appareils = response;
+          this.emitAppareilSubject();
+        },
+        (error) => {
+          console.log('Erreur ! : ' + error);
+        }
+      );
+  }
+  // get<any[]> précise qu'on va recevoir un array de type any
+
 }
