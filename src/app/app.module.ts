@@ -18,6 +18,7 @@ import {FourOhFourComponent} from './four-oh-four/four-oh-four.component';
 import {EditAppareilComponent} from './edit-appareil/edit-appareil.component';
 import {UserListComponent} from './user-list/user-list.component';
 import {NewUserComponent} from './new-user/new-user.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: 'appareils', canActivate: [AuthGuard], component: AppareilViewComponent},
@@ -48,6 +49,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [AppareilService, AuthService, AuthGuard, UserService],
